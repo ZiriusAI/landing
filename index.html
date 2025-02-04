@@ -78,40 +78,15 @@
     <!-- Контакты -->
     <section>
         <h2>Контакты</h2>
-        <p>📞 Телефон (WhatsApp): <a href="https://wa.me/996700293812" class="track-click" data-track="WhatsApp" target="_blank" rel="noopener noreferrer">+996 700 293 812</a></p>
-        <p>📧 Email: <a href="mailto:sales_zuboder@proton.me" class="track-click" data-track="Email" target="_blank" rel="noopener noreferrer">sales_zuboder@proton.me</a></p>
-        <p>📩 Telegram: <a href="https://t.me/elfier_siper" class="track-click" data-track="Telegram" target="_blank" rel="noopener noreferrer">@elfier_siper</a></p>
-        <p>📷 Instagram: <a href="https://www.instagram.com/zirius_ai/" class="track-click" data-track="Instagram" target="_blank" rel="noopener noreferrer">@zirius_ai</a></p>
+        <p>📞 Телефон (WhatsApp): <a href="https://wa.me/996700293812" class="track-click" target="_blank" rel="noopener noreferrer">+996 700 293 812</a></p>
+        <p>📧 Email: <a href="mailto:sales_zuboder@proton.me" class="track-click" target="_blank" rel="noopener noreferrer">sales_zuboder@proton.me</a></p>
+        <p>📩 Telegram: <a href="https://t.me/elfier_siper" class="track-click" target="_blank" rel="noopener noreferrer">@elfier_siper</a></p>
+        <p>📷 Instagram: <a href="https://www.instagram.com/zirius_ai/" class="track-click" target="_blank" rel="noopener noreferrer">@zirius_ai</a></p>
     </section>    
 
     <!-- Footer -->
     <footer>
         <p>Zirius AI © 2025. Все права защищены.</p>
     </footer>
-
-    <!-- Click Tracking Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Находим все элементы с классом track-click
-            const trackableElements = document.querySelectorAll('.track-click');
-            
-            // Добавляем обработчик клика для каждого элемента
-            trackableElements.forEach(function(element) {
-                element.addEventListener('click', function(e) {
-                    // Получаем значение data-track атрибута
-                    const trackingLabel = this.getAttribute('data-track');
-                    
-                    // Отправляем событие в dataLayer
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({
-                        'event': 'button_click',
-                        'event_category': 'User Interaction',
-                        'event_action': 'click',
-                        'event_label': trackingLabel
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
