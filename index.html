@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8E35V40D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JP8E35V40D');
-</script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zirius AI – Интеллектуальный ассистент</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PSPHNDWS');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSPHNDWS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Hero Section -->
     <section class="hero">
         <h1>Zirius AI</h1>
         <h2>Интеллектуальный ассистент для вашего бизнеса</h2>
         <p>Автоматизация общения с клиентами — круглосуточно, без перерывов.</p>
         <p>Мы создаём виртуального помощника, который ведёт диалог с клиентами, как живой специалист. Он принимает заявки, собирает контакты и повышает конверсию, снижая нагрузку на персонал. Наше решение уже помогает стоматологиям, салонам красоты, парикмахерским и другим бизнесам.</p>
-        <a href="https://t.me/zuboder_dent_bot" class="btn" target="_blank" rel="noopener noreferrer">Попробовать помощника бесплатно</a>
+        <a href="https://t.me/zuboder_dent_bot" class="btn track-click" data-track="Try Assistant Free" target="_blank" rel="noopener noreferrer">Попробовать помощника бесплатно</a>
     </section>
 
     <!-- Что мы делаем -->
@@ -58,22 +71,47 @@
         <h2>Попробуйте в действии</h2>
         <p>Ознакомьтесь с тестовым образцом – бот стоматологии «Зубодёр»:</p>
         <img src="images/bot-chat.png" alt="Пример переписки с ботом">
-        <a href="https://t.me/zuboder_dent_bot" class="btn" target="_blank" rel="noopener noreferrer">Перейти в Telegram</a>
+        <a href="https://t.me/zuboder_dent_bot" class="btn track-click" data-track="Telegram Bot" target="_blank" rel="noopener noreferrer">Перейти в Telegram</a>
         <p>Бесплатное подключение на 2 недели – убедитесь в эффективности без риска.</p>
     </section>
 
     <!-- Контакты -->
     <section>
         <h2>Контакты</h2>
-        <p>📞 Телефон (WhatsApp): <a href="https://wa.me/996700293812" target="_blank" rel="noopener noreferrer">+996 700 293 812</a></p>
-        <p>📧 Email: <a href="mailto:sales_zuboder@proton.me">sales_zuboder@proton.me</a></p>
-        <p>📩 Telegram: <a href="https://t.me/elfier_siper" target="_blank" rel="noopener noreferrer">@elfier_siper</a></p>
-        <p>📷 Instagram: <a href="https://www.instagram.com/zirius_ai/" target="_blank" rel="noopener noreferrer">@zirius_ai</a></p>
+        <p>📞 Телефон (WhatsApp): <a href="https://wa.me/996700293812" class="track-click" data-track="WhatsApp" target="_blank" rel="noopener noreferrer">+996 700 293 812</a></p>
+        <p>📧 Email: <a href="mailto:sales_zuboder@proton.me" class="track-click" data-track="Email" target="_blank" rel="noopener noreferrer">sales_zuboder@proton.me</a></p>
+        <p>📩 Telegram: <a href="https://t.me/elfier_siper" class="track-click" data-track="Telegram" target="_blank" rel="noopener noreferrer">@elfier_siper</a></p>
+        <p>📷 Instagram: <a href="https://www.instagram.com/zirius_ai/" class="track-click" data-track="Instagram" target="_blank" rel="noopener noreferrer">@zirius_ai</a></p>
     </section>    
 
-    <!-- Футер -->
+    <!-- Footer -->
     <footer>
         <p>Zirius AI © 2025. Все права защищены.</p>
     </footer>
+
+    <!-- Click Tracking Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Находим все элементы с классом track-click
+            const trackableElements = document.querySelectorAll('.track-click');
+            
+            // Добавляем обработчик клика для каждого элемента
+            trackableElements.forEach(function(element) {
+                element.addEventListener('click', function(e) {
+                    // Получаем значение data-track атрибута
+                    const trackingLabel = this.getAttribute('data-track');
+                    
+                    // Отправляем событие в dataLayer
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        'event': 'button_click',
+                        'event_category': 'User Interaction',
+                        'event_action': 'click',
+                        'event_label': trackingLabel
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
