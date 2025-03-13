@@ -70,7 +70,7 @@ img {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #4A90E2, #FFFFFF);
+    background: #4A90E2;
     color: white;
     text-align: left;
     padding: 40px 30px 100px;
@@ -103,7 +103,7 @@ img {
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 32px;
     margin-bottom: 10px;
     color: white;
     text-align: left;
@@ -290,7 +290,7 @@ footer {
     }
     
     .hero h1 {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .hero h2 {

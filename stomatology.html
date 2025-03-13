@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TNJQD69V');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="browsing-topics=(), interest-cohort=()">
+    <title>Zirius AI для стоматологий</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .benefits-list {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: left;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: #43a047;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 22px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 12px 30px;
+            background-color: #2962ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .btn-wrapper {
+            text-align: center;
+            width: 100%;
+        }
+        
+        .chat-example {
+            margin: 40px auto;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: #2962ff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chat-header h3 {
+            margin: 0;
+            font-size: 18px;
+            color: white;
+            text-align: left;
+        }
+        
+        .avatar {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .chat-body {
+            padding: 15px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            position: relative;
+            clear: both;
+            max-width: 80%;
+        }
+        
+        .message .text {
+            padding: 10px 15px;
+            border-radius: 18px;
+            display: inline-block;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+        }
+        
+        .message .time {
+            font-size: 12px;
+            color: #999;
+            display: block;
+        }
+        
+        .message.bot {
+            float: left;
+        }
+        
+        .message.user {
+            float: right;
+        }
+        
+        .message.user .text {
+            background-color: #e3f2fd;
+            color: #333;
+            border-radius: 18px 18px 0 18px;
+        }
+        
+        .message.bot .text {
+            background-color: #f5f5f5;
+            color: #333;
+            border-radius: 18px 18px 18px 0;
+        }
+        
+        .user-name, .bot-name {
+            font-size: 12px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .user-name {
+            text-align: right;
+        }
+        
+        .bot-name {
+            text-align: left;
+        }
+        
+        .message.bot + .message.user {
+            margin-top: 20px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNJQD69V"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Zirius AI для стоматологий</h1>
+            <h2>Виртуальный оператор, который увеличивает количество записей и экономит ваши деньги</h2>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Преимущества для стоматологических клиник</h2>
+        
+        <ul class="benefits-list">
+            <li>Снижает расходы на операторов до 25 000 сом в месяц.</li>
+            <li>Моментально записывает пациентов, не теряя клиентов.</li>
+            <li>Конверсия из обращений в реальные записи повышается на 20-30% благодаря персональным ответам.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Пример диалога с виртуальным оператором</h2>
+        
+        <div class="chat-example">
+            <div class="chat-header">
+                <div class="avatar"></div>
+                <h3>ZUBODER CHAT</h3>
+            </div>
+            <div class="chat-body">
+                <div class="message user clearfix">
+                    <div class="user-name">Клиент</div>
+                    <div class="text">Делаете чистку?</div>
+                    <span class="time">11:02</span>
+                </div>
+                
+                <div class="message bot clearfix">
+                    <div class="bot-name">ZUBODER CHAT</div>
+                    <div class="text">Да, конечно! Мы делаем профессиональную чистку зубов (ультразвук и AirFlow). Стоимость от 1500 сом. Хотите записаться на чистку?</div>
+                    <span class="time">11:02</span>
+                </div>
+                
+                <div class="message user clearfix">
+                    <div class="user-name">Клиент</div>
+                    <div class="text">А врач кто?</div>
+                    <span class="time">11:03</span>
+                </div>
+                
+                <div class="message bot clearfix">
+                    <div class="bot-name">ZUBODER CHAT</div>
+                    <div class="text">Чистку выполняет терапевт д-р Нурлан Ибраимов. Он опытный специалист, также занимается лечением кариеса и базовой хирургией. Хотите записаться к нему?</div>
+                    <span class="time">11:03</span>
+                </div>
+                
+                <div class="message user clearfix">
+                    <div class="user-name">Клиент</div>
+                    <div class="text">Да, давайте на воскресенье на 4</div>
+                    <span class="time">11:03</span>
+                </div>
+                
+                <div class="message bot clearfix">
+                    <div class="bot-name">ZUBODER CHAT</div>
+                    <div class="text">К сожалению, в воскресенье наша клиника не работает. Мы можем записать вас на любой другой день с понедельника по субботу. Какой день и время вам будет удобно?</div>
+                    <span class="time">11:03</span>
+                </div>
+                
+                <div class="message user clearfix">
+                    <div class="user-name">Клиент</div>
+                    <div class="text">Тогда на завтра на 4</div>
+                    <span class="time">11:03</span>
+                </div>
+                
+                <div class="message bot clearfix">
+                    <div class="bot-name">ZUBODER CHAT</div>
+                    <div class="text">Отлично! Завтра, в среду, мы работаем с 9:00 до 20:00, так что 16:00 вполне подходит. Пожалуйста, напишите ваше имя и контактный номер, чтобы я передал информацию администратору для подтверждения записи.</div>
+                    <span class="time">11:03</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Готовы увеличить количество записей?</h2>
+        <p>Подключите виртуального оператора Zirius AI и забудьте о пропущенных клиентах!</p>
+        
+        <div class="contact-info">
+            <p>📞 Телефон (WhatsApp): <a href="https://wa.me/996990140142" target="_blank" rel="noopener noreferrer">+996 990 140 142</a></p>
+            <p>📧 Email: <a href="mailto:ziriusai@gmail.com" target="_blank" rel="noopener noreferrer">ziriusai@gmail.com</a></p>
+            <p>📩 Telegram: <a href="https://t.me/elfier_siper" target="_blank" rel="noopener noreferrer">@elfier_siper</a></p>
+            <p>📷 Instagram: <a href="https://www.instagram.com/zirius_ai/" target="_blank" rel="noopener noreferrer">@zirius_ai</a></p>
+        </div>
+        
+        <div class="btn-wrapper">
+            <a href="index.html" class="back-btn">Главная страница</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Zirius AI © 2025. Все права защищены.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure all messages have proper clearfix
+            const messages = document.querySelectorAll('.message');
+            messages.forEach(message => {
+                if (!message.classList.contains('clearfix')) {
+                    message.classList.add('clearfix');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

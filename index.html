@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Permissions-Policy" content="browsing-topics=(), interest-cohort=()">
-    <title>Zirius AI – Виртуальный менеджер в чатах</title>
+    <title>Zirius AI – Виртуальный оператор для бизнеса</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -57,6 +57,58 @@
             margin: 10px 0 20px 20px;
             line-height: 1.5;
         }
+        
+        .benefits-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .benefits-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .case-study {
+            background: #f0f7ff;
+            border-left: 4px solid #2962ff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study h3 {
+            color: #2962ff;
+            margin-top: 0;
+        }
+        
+        .result-negative {
+            color: #e53935;
+            font-weight: bold;
+        }
+        
+        .result-positive {
+            color: #43a047;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .benefits-container {
+                flex-direction: column;
+            }
+            
+            .benefits-card {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -68,190 +120,133 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Zirius AI: ваш виртуальный менеджер в чатах</h1>
-            <h2>Отвечает на вопросы, записывает клиентов и увеличивает продажи — без зарплат и выходных</h2>
-            <a href="#contacts" class="btn contact-tracking-btn">Попробовать 5 дней бесплатно</a>
-        </div>
-        <div class="hero-image">
-            <div class="chat-container-embed">
-                <div class="chat-header">
-                    <div class="avatar"></div>
-                    <h2>ZUBODER CHAT</h2>
-                </div>
-                <div class="chat-body">
-                    <div class="message user">
-                        <div class="user-name">Клиент</div>
-                        <div class="text">Делаете чистку?</div>
-                        <span class="time">11:02</span>
-                    </div>
-                    <div class="message bot">
-                        <div class="bot-name">ZUBODER CHAT</div>
-                        <div class="text">Да, конечно! Мы делаем профессиональную чистку зубов (ультразвук и AirFlow). Стоимость от 1500 сом. Хотите записаться на чистку?</div>
-                        <span class="time">11:02</span>
-                    </div>
-                    <div class="message user">
-                        <div class="user-name">Клиент</div>
-                        <div class="text">А врач кто?</div>
-                        <span class="time">11:03</span>
-                    </div>
-                    <div class="message bot">
-                        <div class="bot-name">ZUBODER CHAT</div>
-                        <div class="text">Чистку выполняет терапевт д-р Нурлан Ибраимов. Он опытный специалист, также занимается лечением кариеса и базовой хирургией. Хотите записаться к нему?</div>
-                        <span class="time">11:03</span>
-                    </div>
-                    <div class="message user">
-                        <div class="user-name">Клиент</div>
-                        <div class="text">Да, давайте на воскресенье на 4</div>
-                        <span class="time">11:03</span>
-                    </div>
-                    <div class="message bot">
-                        <div class="bot-name">ZUBODER CHAT</div>
-                        <div class="text">К сожалению, в воскресенье наша клиника не работает. Мы можем записать вас на любой другой день с понедельника по субботу. Какой день и время вам будет удобно?</div>
-                        <span class="time">11:03</span>
-                    </div>
-                    <div class="message user">
-                        <div class="user-name">Клиент</div>
-                        <div class="text">Тогда на завтра на 4</div>
-                        <span class="time">11:03</span>
-                    </div>
-                    <div class="message bot">
-                        <div class="bot-name">ZUBODER CHAT</div>
-                        <div class="text">Отлично! Завтра, в среду, мы работаем с 9:00 до 20:00, так что 16:00 вполне подходит. Пожалуйста, напишите ваше имя и контактный номер, чтобы я передал информацию администратору для подтверждения записи.</div>
-                        <span class="time">11:03</span>
-                    </div>
-                </div>
-            </div>
+            <h1>Получайте больше клиентов из WhatsApp&nbsp;и Telegram</h1>
+            <h2>Zirius AI – виртуальный оператор для бизнеса, который моментально увеличивает продажи и экономит ваши деньги.</h2>
         </div>
     </section>
 
-    <!-- Что делает виртуальный помощник -->
+    <!-- Почему это важно -->
     <section id="about">
-        <h2>Как работает наш ассистент</h2>
-        <p>Zirius AI создаёт ассистента, который заменяет менеджера в чатах. Он понимает контекст, отвечает на вопросы об услугах, ценах, условиях и может записывать клиента или оформлять заказ. Работает 24/7 и никогда не просит выходных. Если ассистент не знает ответа, вы можете подключиться и продолжить общение вручную. Доступен в Telegram и WhatsApp.</p>
-        <div class="btn-wrapper">
-            <a href="https://t.me/zuboder_dent_bot" class="btn" target="_blank" rel="noopener noreferrer">Проверить работу ассистента</a>
-        </div>
+        <h2>Почему это важно?</h2>
+        <p>Более 30% клиентов уходят к конкурентам, если не получают ответ сразу. Каждый пропущенный клиент – это ваши потерянные деньги. Наш бот помогает сохранить этих клиентов и сократить расходы на обслуживание на 30-50%.</p>
     </section>
 
     <!-- Преимущества -->
     <section id="advantages">
-        <h2 class="faq-title">Почему это выгодно</h2>
-        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-question">Круглосуточная работа</div>
-                <div class="faq-answer">Не теряете клиентов ночью и в выходные.</div>
+        <h2>Что вы получите с Zirius AI:</h2>
+        <ul>
+            <li>⚡️ <strong>Моментальные ответы</strong> – клиенты сразу получают нужную информацию и делают покупку.</li>
+            <li>💰 <strong>Экономию денег</strong> – замена живого оператора с зарплатой от 20 000 сом в месяц на выгодный тариф.</li>
+            <li>📈 <strong>Рост конверсии</strong> – благодаря индивидуальным ответам вместо стандартных шаблонов, клиент быстрее принимает решение.</li>
+            <li>⏳ <strong>Работа 24/7</strong> – клиенты больше не ждут ответа по ночам и выходным.</li>
+            <li>💬 <strong>Система фильтров</strong> – получайте оповещения только об успешных диалогах, вместе с их кратким содержанием.</li>
+        </ul>
+    </section>
+
+    <!-- Примеры работы -->
+    <section id="case-studies">
+        <h2>Реальные примеры работы:</h2>
+        
+        <div class="case-study">
+            <h3>✅ Стоматология:</h3>
+            <p>Раньше администратор отвечал с задержкой от 30 минут, теряя пациентов и деньги.</p>
+            <p class="result-negative">🔴 Потери: до 25 клиентов в месяц (~40 000 сом потенциальной прибыли).</p>
+            <p class="result-positive">🟢 С Zirius AI: моментальный ответ, количество записей выросло на 20%, ежемесячный доход клиники вырос на 40 000 сом.</p>
             </div>
             
-            <div class="faq-item">
-                <div class="faq-question">Экономия на зарплате</div>
-                <div class="faq-answer">Подписка дешевле полноценного менеджера.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Удобная фильтрация диалогов</div>
-                <div class="faq-answer">Система автоматически показывает только важные сообщения.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Рост продаж</div>
-                <div class="faq-answer">Мгновенные ответы удерживают заинтересованного клиента.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Простое подключение</div>
-                <div class="faq-answer">Мы всё настраиваем за вас, без технических сложностей.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Контроль</div>
-                <div class="faq-answer">При необходимости вмешиваетесь в диалог и отвечаете сами.</div>
-            </div>
+        <div class="case-study">
+            <h3>✅ Строительная компания:</h3>
+            <p>Менеджер ежедневно тратил время на 30-50 одинаковых вопросов, которые редко приводили к реальным продажам.</p>
+            <p class="result-negative">🔴 Расходы: менеджер за 20 000 сом/мес, низкая конверсия в сделки.</p>
+            <p class="result-positive">🟢 С Zirius AI: тариф за 8950 сом заменил менеджера, конверсия выросла на 25%, экономия 11 000 сом каждый месяц.</p>
         </div>
     </section>
 
     <!-- Тарифы и подписка -->
     <section id="pricing">
-        <h2>Сколько стоит виртуальный менеджер</h2>
-        <p>Наши тарифы заменяют одного или нескольких менеджеров, которые обычно сидят в чатах по 8 часов в день, 22 рабочих дня в месяц. Если у вас небольшой поток сообщений, достаточно пол-менеджера. Если запросов много — можно взять целого или даже двух.</p>
+        <h2>Тарифы (без скрытых платежей)</h2>
         
         <table class="pricing-table">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>Тариф</th>
                     <th>Telegram</th>
                     <th>WhatsApp</th>
-                    <th>Для какого объёма запросов</th>
+                    <th>Подходит, если:</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Пол-менеджера</strong></td>
-                    <td>5200 сом/мес</td>
-                    <td>6200 сом/мес</td>
-                    <td>Небольшой поток, когда одного сотрудника было бы избыточно</td>
+                    <td><strong>Стартовый</strong></td>
+                    <td>5200 сом</td>
+                    <td>6200 сом</td>
+                    <td>до 20 обращений в день; экономия до 15 000 сом в месяц.</td>
                 </tr>
                 <tr>
-                    <td><strong>1 менеджер</strong></td>
-                    <td>8950 сом/мес</td>
-                    <td>9950 сом/мес</td>
-                    <td>Средний объём: обычно хватает для офлайн-бизнеса с активными чатами</td>
+                    <td><strong>Оптимальный</strong></td>
+                    <td>8950 сом</td>
+                    <td>9950 сом</td>
+                    <td>30-40 обращений в день; экономия до 20 000 сом ежемесячно.</td>
                 </tr>
                 <tr>
-                    <td><strong>2 менеджера</strong></td>
-                    <td>16900 сом/мес</td>
-                    <td>17900 сом/мес</td>
-                    <td>Высокая нагрузка: если у вас большой спрос или несколько точек продаж</td>
+                    <td><strong>Высокая нагрузка</strong></td>
+                    <td>16900 сом</td>
+                    <td>17900 сом</td>
+                    <td>более 40 обращений в день; экономия до 40 000 сом/месяц, идеально для большого потока клиентов.</td>
                 </tr>
             </tbody>
         </table>
         
-        <p style="font-size: 14px; color: #666666;">Если выяснится, что поток сообщений больше, чем рассчитано на ваш тариф, мы предложим перейти на следующий уровень.</p>
+        <p>🔸 Подключение и настройка – бесплатно</p>
+        <p>🎁 Первые 5 дней тестирования – бесплатно</p>
     </section>
 
-    <!-- Тестовый период -->
-    <section id="trial">
-        <h2>5 дней бесплатно</h2>
-        <p>Мы предлагаем 5-дневный тест (или четверть лимита одного менеджера, что наступит раньше). За это время вы убедитесь, насколько удобно иметь виртуального помощника. Если не понравится, просто откажитесь без дополнительных оплат.</p>
-        <div class="btn-wrapper">
-            <a href="#contacts" class="btn contact-tracking-btn">Подключить тест</a>
+    <!-- Как это работает -->
+    <section id="how-it-works">
+        <h2>Как это работает?</h2>
+        <ol>
+            <li>Подключаете бота за 1 день.</li>
+            <li>Тестируете бесплатно 5 дней.</li>
+            <li>Сравниваете экономию и рост заявок.</li>
+            <li>Платите только после того, как увидели выгоду.</li>
+        </ol>
+    </section>
+
+    <!-- Дополнительные бонусы -->
+    <section id="benefits">
+        <h2>Дополнительные бонусы</h2>
+        <div class="benefits-container">
+            <div class="benefits-card">
+                <h3>⚙️ Интеграция</h3>
+                <p>Бесплатная интеграция с вашей CRM или таблицами.</p>
+            </div>
+            <div class="benefits-card">
+                <h3>📈 Аналитика</h3>
+                <p>Подробная аналитика и отчёты.</p>
+            </div>
+            <div class="benefits-card">
+                <h3>🤖 Обновления</h3>
+                <p>Регулярные обновления без доплаты.</p>
+            </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-        <h2 class="faq-title">Частые вопросы</h2>
-        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-question">Можно ли подключить и Telegram, и WhatsApp?</div>
-                <div class="faq-answer">Да, поддерживаются оба мессенджера.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Что, если ассистент не знает ответа?</div>
-                <div class="faq-answer">Вы можете в любой момент подключиться к переписке и продолжить общение вручную.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Нужно ли что-то устанавливать или настраивать?</div>
-                <div class="faq-answer">Мы берём всё на себя. От вас требуется лишь предоставить необходимые данные (номер или аккаунт).</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Что делать, если лимит диалогов исчерпан?</div>
-                <div class="faq-answer">Предложим перейти на более высокий тариф, чтобы всё работало без ограничений.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Правда ли, что ассистент ведёт осмысленную беседу, а не выдаёт шаблоны?</div>
-                <div class="faq-answer">Да, это интеллектуальная система, которая учитывает контекст и умеет отвечать на уточняющие вопросы.</div>
-            </div>
+    <!-- Демо -->
+    <section id="demo">
+        <h2>Посмотрите, как бот работает:</h2>
+        <div class="btn-wrapper">
+            <a href="https://t.me/zuboder_dent_bot" class="btn" target="_blank" rel="noopener noreferrer">Попробовать демо-бота</a>
+        </div>
+        <div class="btn-wrapper">
+            <a href="stomatology.html" class="btn" target="_blank">Как это работает для стоматологий</a>
+            <a href="construction.html" class="btn" target="_blank">Как это работает для строительных фирм</a>
         </div>
     </section>
 
     <!-- Завершающий блок -->
     <section id="contacts" class="contact-section">
-        <h2>Готовы освободить время и увеличить продажи?</h2>
-        <p>Свяжитесь с нами и получите своего виртуального менеджера. Забудьте о пропущенных сообщениях и освободите персонал от рутины!</p>
+        <h2>Остались вопросы или готовы начать?</h2>
+        <p>Свяжитесь с нами и получите своего виртуального оператора. Забудьте о пропущенных сообщениях и освободите персонал от рутины!</p>
         <div class="contact-info">
             <p>📞 Телефон (WhatsApp): <a href="https://wa.me/996990140142" target="_blank" rel="noopener noreferrer">+996 990 140 142</a></p>
             <p>📧 Email: <a href="mailto:ziriusai@gmail.com" target="_blank" rel="noopener noreferrer">ziriusai@gmail.com</a></p>
