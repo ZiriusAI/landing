@@ -37,7 +37,7 @@
         <select id="currency-select">
             <option value="KGS">Сомы (KGS)</option>
             <option value="KZT">Тенге (KZT)</option>
-            <option value="RUB">Рубли (RUB)</option>
+            <!-- <option value="RUB">Рубли (RUB)</option> -->
         </select>
     </div>
 
@@ -204,44 +204,21 @@
     <!-- Currency Conversion Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get all pricing elements
             const currencySelect = document.getElementById('currency-select');
+            let originalContent = new Map(); // Store original content for all elements
             
-            // Store original prices in KGS
-            const priceElements = document.querySelectorAll('.pricing-table td:nth-child(2), .pricing-table td:nth-child(3)');
-            const originalPrices = [];
-            
-            // Store the original prices and their text content
-            priceElements.forEach(el => {
-                const priceText = el.textContent;
-                const priceMatch = priceText.match(/(\d+)/);
-                if(priceMatch) {
-                    originalPrices.push({
-                        element: el,
-                        price: parseInt(priceMatch[0], 10),
-                        originalText: priceText
-                    });
-                }
-            });
-            
-            // Also find price mentions in the text
-            const textElements = document.querySelectorAll('p, li, h2, h3');
-            textElements.forEach(el => {
-                const text = el.textContent;
-                const priceMatches = [...text.matchAll(/(\d{1,3}(?:\s?\d{3})*)\s?сом/g)];
+            // Function to find all price elements and store their original content
+            function initializePrices() {
+                // Find all elements that might contain prices
+                const elements = document.querySelectorAll('p, li, td');
                 
-                if(priceMatches.length > 0) {
-                    for(const match of priceMatches) {
-                        const price = parseInt(match[1].replace(/\s/g, ''), 10);
-                        originalPrices.push({
-                            element: el,
-                            price: price,
-                            originalText: text,
-                            matchText: match[0]
-                        });
+                elements.forEach(el => {
+                    const text = el.textContent;
+                    if (text.includes('сом')) {
+                        originalContent.set(el, text);
                     }
-                }
-            });
+                });
+            }
             
             // Function to convert and update prices
             function updatePrices(currency) {
@@ -252,37 +229,35 @@
                         currencySymbol = 'тенге';
                         conversionRate = val => Math.round(val / 0.15);
                         break;
-                    case 'RUB':
-                        currencySymbol = 'руб';
-                        conversionRate = val => Math.round(val * 1.2);
-                        break;
                     default: // KGS
                         currencySymbol = 'сом';
                         conversionRate = val => val;
                 }
                 
-                // Update all price elements
-                originalPrices.forEach(item => {
-                    const convertedPrice = conversionRate(item.price);
+                // Update all elements that contain prices
+                originalContent.forEach((originalText, element) => {
+                    let newText = originalText;
                     
-                    if(item.matchText) {
-                        // For text mentions, replace only the matched part
-                        const newText = item.originalText.replace(
-                            item.matchText, 
-                            `${convertedPrice.toLocaleString('ru-RU')} ${currencySymbol}`
+                    // Find and replace all price mentions
+                    const priceMatches = [...originalText.matchAll(/(\d{1,3}(?:\s?\d{3})*)\s?сом/g)];
+                    
+                    priceMatches.forEach(match => {
+                        const price = parseInt(match[1].replace(/\s/g, ''), 10);
+                        const convertedPrice = conversionRate(price);
+                        const formattedPrice = convertedPrice.toLocaleString('ru-RU');
+                        
+                        newText = newText.replace(
+                            match[0],
+                            `${formattedPrice} ${currencySymbol}`
                         );
-                        item.element.textContent = newText;
-                    } else {
-                        // For table cells
-                        item.element.textContent = item.originalText.replace(
-                            /\d+\s?сом/, 
-                            `${convertedPrice.toLocaleString('ru-RU')} ${currencySymbol}`
-                        );
-                    }
+                    });
+                    
+                    element.textContent = newText;
                 });
             }
             
-            // Add event listener for currency selector
+            // Initialize prices and add event listener
+            initializePrices();
             currencySelect.addEventListener('change', function() {
                 updatePrices(this.value);
             });
