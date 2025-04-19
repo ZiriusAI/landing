@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Google Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        
+        // Default consent settings
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500 // Wait 500ms before firing tags that require consent
+        });
+    </script>
+    <!-- End Google Consent Mode v2 -->
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -262,6 +278,74 @@
             currencySelect.addEventListener('change', function() {
                 updatePrices(this.value);
             });
+        });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #f1f1f1; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 1000;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <div style="margin-right: 20px; flex: 1;">
+                <p style="margin: 0; font-size: 14px;">Мы используем файлы cookie для улучшения вашего опыта работы, а также в аналитических и рекламных целях. Продолжая использовать наш сайт, вы соглашаетесь с нашей <a href="policy.html" style="color: inherit; text-decoration: underline;">Политикой конфиденциальности</a>.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button id="cookie-consent-accept-all" style="background-color: #2272FF; border: none; color: white; padding: 8px 16px; cursor: pointer; border-radius: 4px;">Принять все</button>
+                <button id="cookie-consent-accept-necessary" style="background-color: transparent; border: 1px solid #333; color: #333; padding: 8px 16px; cursor: pointer; border-radius: 4px;">Только необходимые</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show cookie banner if consent not already given
+            if (!localStorage.getItem('cookie-consent-choice')) {
+                document.getElementById('cookie-consent-banner').style.display = 'block';
+            }
+
+            // Handle Accept All button
+            document.getElementById('cookie-consent-accept-all').addEventListener('click', function() {
+                // Update consent state for all purposes to 'granted'
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'analytics_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+                
+                // Store consent choice
+                localStorage.setItem('cookie-consent-choice', 'all');
+                
+                // Hide banner
+                document.getElementById('cookie-consent-banner').style.display = 'none';
+            });
+
+            // Handle Necessary Only button
+            document.getElementById('cookie-consent-accept-necessary').addEventListener('click', function() {
+                // Keep all consent settings as 'denied'
+                gtag('consent', 'update', {
+                    'ad_storage': 'denied',
+                    'analytics_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied'
+                });
+                
+                // Store consent choice
+                localStorage.setItem('cookie-consent-choice', 'necessary');
+                
+                // Hide banner
+                document.getElementById('cookie-consent-banner').style.display = 'none';
+            });
+            
+            // If user has already made a choice, apply it
+            const consentChoice = localStorage.getItem('cookie-consent-choice');
+            if (consentChoice === 'all') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'analytics_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
         });
     </script>
 </body>
