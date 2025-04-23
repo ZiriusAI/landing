@@ -10,11 +10,11 @@
       var d = document;
       var s = d.createElement("script");
       s.src = "https://client.crisp.chat/l.js";
-      s.async = true;
+      s.async = 1;
       d.getElementsByTagName("head")[0].appendChild(s);
     })();
     window.$crisp.push(['on', 'session:ready', function() {
-      window.$crisp.push(['do', 'chat:open']);
+      window.$crisp.push(['do', 'chat:open']);  // открыть чат по умолчанию :contentReference[oaicite:0]{index=0}
     }]);
   </script>
 </head>
