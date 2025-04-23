@@ -13,6 +13,9 @@
       s.async = true;
       d.getElementsByTagName("head")[0].appendChild(s);
     })();
+    window.$crisp.push(['on', 'session:ready', function() {
+      window.$crisp.push(['do', 'chat:open']);
+    }]);
   </script>
 </head>
 <body>
